@@ -52,7 +52,7 @@ pop_temp <- function(
   string <- if (template_file == "n") {
     template
   } else {
-    readChar(template_file, file_info(template_file)$size)
+    readChar(template_file, file.info(template_file)$size)
   }
   for (i in 1:nrow(data)) {
     item_list <- sapply(names(data), function(x) as.character(data[[x]][i]))
