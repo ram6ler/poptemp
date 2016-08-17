@@ -1,0 +1,10 @@
+Package: poptemp
+Type: Package
+Title: Populates a Template with Values from a Data Frame
+Version: 0.1.0
+Authors@R: person("Richard", "Ambler", email = "rambler@ibwya.net", role = c("aut", "cre"))
+Description: Creates a new file based on an arbitrary template for each row in a
+    data frame.
+License: MIT + file LICENCE
+LazyData: TRUE
+RoxygenNote: 5.0.1
