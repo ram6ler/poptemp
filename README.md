@@ -17,14 +17,22 @@ devtools::install_github("ram6ler/poptemp")
 
 ### Example use
 
-You are the *Company Designator of Inane Tasks* (every company has one), just bursting to use your RStudio skills to help you designate inane tasks more efficiently. In particular, you need to assign an inane task to each of the employees Jack, Ivan, Johab and Jan. Although the task is very similar in each case, the specifics are different. The following data frame contains the details:
+You are the *Company Designator of Inane Tasks* (every company has one), just bursting to use your RStudio skills to help you designate inane tasks more efficiently. In particular, you need to assign an inane task to each of the employees Jack, Ivan, Johab and Jan. Although the task is very similar in each case, the specifics are different. You have the specific details stored, say, in a csv file called `inane-tasks.csv`:
+
+#### inane-tasks.csv
+
+```csv
+person,model_mean,model_sd
+Jack,85,10
+Ivan,90,5
+Johab,100,8
+Jan,120,15
+```
+
+You load the data into a data frame in an R session:
 
 ```r
-inane_task_details <- data.frame(
-  person = c("Jack", "Ivan", "Johab", "Jan"),
-  model_mean = c(85, 90, 100, 120),
-  model_sd = c(10, 5, 8, 15)
-)
+inane_task_details <- read.csv("inane-tasks.csv")
 ```
 
 You set up a template file, say `template.Rmd`, that has the approprate variable (column) names in the appropriate places: 
@@ -59,7 +67,7 @@ You set up a template file, say `template.Rmd`, that has the approprate variable
 		The Company Designator of Inane Tasks
 
 
-You load up the `poptemp` library:
+In the R session, you load up the `poptemp` library:
 
 ```r
 library(poptemp)
@@ -79,11 +87,11 @@ pop_temp(
 
 (For other settings, such as the directory for the output files or the format for the substitution markers in the template, see `? pop_temp`.)
 
-This writes several new files to your working directory:
+This writes several new files to your working directory, one for each row in the data frame:
 
 * `problem-1-for-Jack.Rmd`
 * `problem-2-for-Ivan.Rmd`
 * `problem-3-for-Johab.Rmd`
 * `problem-4-for-Jan.Rmd`
 
-You finally knit these files and send them out, content with a productive morning!
+You finally knit these files into an appropriate form and send them out, content with a productive morning!
