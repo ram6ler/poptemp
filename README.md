@@ -29,12 +29,6 @@ Johab,100,8
 Jan,120,15
 ```
 
-You load the data into a data frame in an R session:
-
-```r
-inane_task_details <- read.csv("inane-tasks.csv")
-```
-
 You set up a template file, say `template.Rmd`, that has the approprate variable (column) names in the appropriate places: 
 
 #### template.Rmd
